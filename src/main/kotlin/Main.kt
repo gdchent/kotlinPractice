@@ -26,10 +26,21 @@ fun main(args: Array<String>) {
     //var javaString: JavaStringutil = JavaStringutil()
    // javaString.testString()
 
-    println("lumda表达式")
-    val sum={arg1:Int,arg2:Int -> arg1+arg2}
-    println(sum(22,33))
-    println(sum.invoke(22,33))
+   // println("lumda表达式")
+   // val sum={arg1:Int,arg2:Int -> arg1+arg2}
+    //println(sum(22,33))
+   // println(sum.invoke(22,33))
+
+
+    for(arg in args){
+         println("args"+arg)
+    }
+
+    for((index,value) in args.withIndex()){
+         println("$index -> $value -> ")
+    }
+
+
 }
 
 
@@ -211,6 +222,17 @@ class Operator(op: String) {
 
         return opFun(left, right)
     }
+
+
+
+    fun  testIntFor(){
+
+    }
+
+
+
+
+
 
 }
 
