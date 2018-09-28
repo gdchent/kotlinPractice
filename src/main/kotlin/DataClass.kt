@@ -1,0 +1,1 @@
+data class DataClass (var name: String,var sound: String)

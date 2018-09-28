@@ -1,5 +1,6 @@
 open class Person constructor(name:String,age:Int,var sound:String){
 
+    var weight:Double =0.0
      init {
          println("new了一个人的对象，ta的name$name 年龄$age 声音$sound")
      }
@@ -8,6 +9,7 @@ open class Person constructor(name:String,age:Int,var sound:String){
     fun run(){
             println("人的run方法")
     }
+
  }
 
 class Student(name:String,age: Int,sound: String):Person(name,age,sound){

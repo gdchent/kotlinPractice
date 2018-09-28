@@ -28,6 +28,14 @@ String [] str=new String[]{
    var string: String = "HelloWorld"
    var fromChars: String = String(charArrayOf('H', 'e', 'l', 'l', 'o', 'W', 'o', 'r', 'l', 'd'))
 
+   //字符串数组的遍历
+   var stringArray2 = arrayOf("数据1", "数据2", "数据3")
+       for (i in stringArray2.indices) {
+           println(stringArray2[i])
+       }
+
+        //实用foreach方式遍历
+       stringArray2.forEach({element-> println(element)})
 
        // kotlin中的类 以及 继承
        //人类
@@ -36,7 +44,6 @@ String [] str=new String[]{
             init {
                 println("new了一个人的对象，ta的name$name 年龄$age 声音$sound")
             }
-
            //测试方法
            fun run(){
                    println("人的run方法")
@@ -105,6 +112,37 @@ String [] str=new String[]{
           val sum = { arg1: Int, arg2: Int -> arg1 * arg2 }
           println(sum(22, 33))
           println(sum.invoke(22, 33)) //只有在实用lumbda表达式的时候才可以实用invoke方法
-
-
 }
+
+
+//面向对象总结java vs kotlin  区别
+在Java中接口里面的所有方法必须为抽象方法不能在接口中直接实现
+而在kotlin中如果父接口中有实现了的方法  子类或者子接口不一定要实现  可以腹写方法也可以不实现
+
+## kotlin 再见JavaBean
+ //获取Javabean
+ var dataClass:DataClass =DataClass("name","sound")
+ data class DataClass (var name: String,var sound: String)
+
+  println(dataClass.sound)
+   //反编译可以看到 component1   component2 依次为data类的参数
+     println(dataClass.component1())
+     println(dataClass.component2())
+
+
+###关于Javabean 写个
+    class ComponentX {
+         operator fun component1():Int{
+                  return 1
+          }
+
+          operator fun component2():Int{
+                         return 2
+           }
+
+
+         }
+
+    var componentX:ComponentX=ComponentX()
+    var (a,b)=componentX
+    println("$a == $b")

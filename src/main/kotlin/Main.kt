@@ -31,17 +31,38 @@ fun main(args: Array<String>) {
     println(sum(22, 33))
     println(sum.invoke(22, 33))
 
-
     println()
 
-    for (arg in args) {
-        println("args" + arg)
+    var stringArray2 = arrayOf("数据1", "数据2", "数据3")
+    for (string in stringArray2){
+        println("遍历获取的每一项"+string)
     }
 
-    for ((index, value) in args.withIndex()) {
+    for ((index, value) in stringArray2.withIndex()) {
         println("$index -> $value -> ")
     }
 
+    //循环第三种方式
+    stringArray2.forEach({ element-> println(element)})
+
+    //创建Computer实例
+    var computer:Computer =Computer()
+    var usbMouse :USBMouse=LogitechMouse()
+    computer.addInput(usbMouse)
+
+    var javaName:JavaName=JavaName("javaname666")
+
+    println("data==========")
+    var dataClass:DataClass =DataClass("name","sound")
+    println(dataClass.sound)
+    println(dataClass.component1())
+    println(dataClass.component2())
+    println("data==========")
+    //for ((index,value) in args.withIndex())
+
+   var componentX:ComponentX=ComponentX()
+    var (a,b)=componentX
+    println("$a == $b")
 }
 
 
@@ -89,7 +110,6 @@ fun testString() {
     print("flkfd\n")
     println("dksfkdsa")
 
-
 }
 
 
@@ -98,7 +118,6 @@ fun testObject() {
     var people: Person = Person("张三", 22, "吹逼的声音")
     var student: Student = Student("李四", 33, "吹水的66666")
     var teacher: Teacher = Teacher("王五", 36, "声音一点都不爽")
-
 
     var person2: Person = Student("person2", 33, "吹水的66666")
     student.run()
@@ -239,8 +258,10 @@ class Operator(op: String) {
         return opFun(left, right)
     }
 
-
 }
+
+
+
 
 
 
