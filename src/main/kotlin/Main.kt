@@ -63,6 +63,9 @@ fun main(args: Array<String>) {
    var componentX:ComponentX=ComponentX()
     var (a,b)=componentX
     println("$a == $b")
+
+
+
 }
 
 

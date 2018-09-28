@@ -146,3 +146,28 @@ String [] str=new String[]{
     var componentX:ComponentX=ComponentX()
     var (a,b)=componentX
     println("$a == $b")
+
+
+    ## 内部类
+  java代码如下：
+  public class InnerClassJava {
+
+
+      //内部类
+      public static class Inner {
+
+      }
+
+      public static void main(String[] args) {
+
+          InnerClassJava innerClassJava=new InnerClassJava();
+          Inner inner=new Inner();
+          /**
+            *
+            * 在Java中默认内部类是非静态的  要想直接 内部类要么为静态内部类要么先拿到外部类的实例 然后再拿到
+            *
+            */
+      }
+  }
+
+
