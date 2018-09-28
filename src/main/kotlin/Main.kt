@@ -24,22 +24,23 @@ fun main(args: Array<String>) {
     //functionNumberUtil()
 
     //var javaString: JavaStringutil = JavaStringutil()
-   // javaString.testString()
+    // javaString.testString()
 
-   // println("lumda表达式")
-   // val sum={arg1:Int,arg2:Int -> arg1+arg2}
-    //println(sum(22,33))
-   // println(sum.invoke(22,33))
+    println("lumbda表达式")
+    val sum = { arg1: Int, arg2: Int -> arg1 * arg2 }
+    println(sum(22, 33))
+    println(sum.invoke(22, 33))
 
 
-    for(arg in args){
-         println("args"+arg)
+    println()
+
+    for (arg in args) {
+        println("args" + arg)
     }
 
-    for((index,value) in args.withIndex()){
-         println("$index -> $value -> ")
+    for ((index, value) in args.withIndex()) {
+        println("$index -> $value -> ")
     }
-
 
 }
 
@@ -172,8 +173,8 @@ fun functionNumberUtil() {
 
         try {
             println("请输入算式列如：3+4")
-            var input = readLine()?:break
-            if(input.trim().isEmpty()){
+            var input = readLine() ?: break
+            if (input.trim().isEmpty()) {
                 println("请输入数字")
                 return
             }
@@ -190,13 +191,28 @@ fun functionNumberUtil() {
 
                 break
             }
-        }catch (e:NumberFormatException){
-            println("数据输入格式错误"+e.message)
+        } catch (e: NumberFormatException) {
+            println("数据输入格式错误" + e.message)
         }
 
 
     }
 
+}
+
+
+fun testIntFor() {
+
+}
+
+
+fun lambda() {
+
+}
+
+
+fun sumTotal(a: Int, b: Int): Int {
+    return a + b
 }
 
 
@@ -222,16 +238,6 @@ class Operator(op: String) {
 
         return opFun(left, right)
     }
-
-
-
-    fun  testIntFor(){
-
-    }
-
-
-
-
 
 
 }
