@@ -64,8 +64,6 @@ fun main(args: Array<String>) {
     var (a,b)=componentX
     println("$a == $b")
 
-
-
 }
 
 
