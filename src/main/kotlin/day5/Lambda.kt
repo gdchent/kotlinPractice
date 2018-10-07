@@ -32,24 +32,26 @@ fun main(args: Array<String>) {
     //调用函数赋值给一个变量
     var hellow=TesClass::hellow  //这个就相当于java的类的静态方法一样
 
-
     var result=strArray.filter(String::isEmpty)
     result.forEach {
         println("空的"+it)
     }
     var pdfPrinter:PdfPrinter= PdfPrinter()
-    //pdfPrinter.printMethod("any")
+    pdfPrinter.pdfPrinter("any")
     PdfPrinter.printMethod("any")
 }
 
 class PdfPrinter{
      //自己定义一个方法
-
     companion object {
         fun printMethod(any: Any){
             println("printLn函数打印 $any")
         }
 
+    }
+
+    fun pdfPrinter(any:Any){
+        println("pdfPrinter")
     }
 
 }
