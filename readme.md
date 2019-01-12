@@ -200,3 +200,5 @@ class CheckUpdateUtil {
     }
 }
 ```
+
+# typora文本编辑器使用教程链接地址https://blog.csdn.net/mingzhuo_126/article/details/79941450
