@@ -8,10 +8,10 @@ String [] str=new String[]{
 }
 //转变为kotlin的字符串
  val stringArray = arrayOf("数据1", "数据2", "数据3")
-        //kotlin的字符串数组的遍历
-        for (i in stringArray.indices) {
-            print(stringArray[i] + "\t")
-        }
+​        //kotlin的字符串数组的遍历
+​        for (i in stringArray.indices) {
+​            print(stringArray[i] + "\t")
+​        }
 
   # java中获取字符串
 
@@ -19,10 +19,10 @@ String [] str=new String[]{
   Sting str=new String("我是字符串");
   //方式2
    char [] chars=new char[] {
-                "a",
-                "b",
-                "f",
-        };
+​                "a",
+​                "b",
+​                "f",
+​        };
    String string=new String(chars);
   ## kotlin中获取字符串
    var string: String = "HelloWorld"
@@ -30,17 +30,17 @@ String [] str=new String[]{
 
    //字符串数组的遍历
    var stringArray2 = arrayOf("数据1", "数据2", "数据3")
-       for (i in stringArray2.indices) {
-           println(stringArray2[i])
-       }
+​       for (i in stringArray2.indices) {
+​           println(stringArray2[i])
+​       }
 
         //实用foreach方式遍历
        stringArray2.forEach({element-> println(element)})
-
+    
        // kotlin中的类 以及 继承
        //人类
        open class Person constructor(name:String,age:Int,var sound:String){
-
+    
             init {
                 println("new了一个人的对象，ta的name$name 年龄$age 声音$sound")
             }
@@ -54,9 +54,9 @@ String [] str=new String[]{
            init {
                println("new了一个学生对象，ta的name$name 年龄$age 声音$sound")
            }
-
+    
        }
-
+    
        //教师类
        class Teacher(name:String,age:Int,sound: String){
             init {
@@ -67,7 +67,7 @@ String [] str=new String[]{
 
 
       # 创建面向对象实例
-
+    
       fun testObject() {
           var javaPerson: JavaPerson = JavaPerson("java", "java_sound", 666)  //kotlin里面调用Java实例
           var people: Person = Person("张三", 22, "吹逼的声音")
@@ -77,13 +77,13 @@ String [] str=new String[]{
 
           var person2: Person = Student("person2", 33, "吹水的66666")
           student.run()
-
+    
           if (student is Person) {
               println("输出学生是人")
           } else {
               print("输出的学生不是人")
           }
-
+    
           // is用户判断 是否属于什么    相当于Java跟js里面的instance of
           if (person2 is Student) {
               //
@@ -107,7 +107,7 @@ String [] str=new String[]{
 
 
        # lumbda表达式
-
+    
         println("lumbda表达式")
           val sum = { arg1: Int, arg2: Int -> arg1 * arg2 }
           println(sum(22, 33))
@@ -126,15 +126,15 @@ String [] str=new String[]{
 
   println(dataClass.sound)
    //反编译可以看到 component1   component2 依次为data类的参数
-     println(dataClass.component1())
-     println(dataClass.component2())
+​     println(dataClass.component1())
+​     println(dataClass.component2())
 
 
 ###关于Javabean 写个
-    class ComponentX {
-         operator fun component1():Int{
-                  return 1
-          }
+​    class ComponentX {
+​         operator fun component1():Int{
+​                  return 1
+​          }
 
           operator fun component2():Int{
                          return 2
@@ -142,7 +142,7 @@ String [] str=new String[]{
 
 
          }
-
+    
     var componentX:ComponentX=ComponentX()
     var (a,b)=componentX
     println("$a == $b")
@@ -155,11 +155,11 @@ String [] str=new String[]{
 
       //内部类
       public static class Inner {
-
+    
       }
-
+    
       public static void main(String[] args) {
-
+    
           InnerClassJava innerClassJava=new InnerClassJava();
           Inner inner=new Inner();
           /**
@@ -170,4 +170,33 @@ String [] str=new String[]{
       }
   }
 
+## Kotlin的高阶函数与 lambda 表达式示例代码
 
+```java
+/**
+ * Created by chentao
+ * Date:2019/1/12
+ */
+class CheckUpdateUtil {
+
+
+    fun update(isHot:Boolean){
+        update(isHot,{a,b->
+            Log.i("gdchent","lambda"+a+","+b)
+            c()
+        })
+    }
+
+    fun update(isHot: Boolean,next:(a:Int,b:Int)->Unit){
+            next(3,6)
+    }
+
+    fun c(){
+        var b=CheckUpdateUtil()
+        eat()
+    }
+    fun eat(){
+        Log.i("gdchent","eat")
+    }
+}
+```
