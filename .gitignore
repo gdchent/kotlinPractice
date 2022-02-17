@@ -12,6 +12,8 @@
 # production
 /webim
 /dist
+/build
+
 # misc
 .DS_Store
 .env.local
