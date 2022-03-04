@@ -8,5 +8,4 @@ class StringArrayUtil {
             print(stringArray[i] + "\t")
         }
     }
-
 }

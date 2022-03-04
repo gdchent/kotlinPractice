@@ -2,7 +2,7 @@ package com.gdchent.kotlin.lambda
 
 class KotlinLambda {
 
-    public fun lambdaTest(){
+    fun lambdaTest(){
 
         //定义一个无参数的lambda表达式
         val test1_1 = { println("无参数") }
@@ -22,6 +22,12 @@ class KotlinLambda {
         val test3_2:(Int , Int) -> Int = {a , b -> a + b}
         val resultTest3_2=test3_2(1,2)
         println(resultTest3_2)
+    }
+
+    //比如写一个加法计算器 用户输入1+2
+    fun funcByLambdaParams(num1:Int,num2:Int,callback:(result:Int)->Unit){
+         //执行callbacck
+        callback(num1+num2)
     }
 
 }
